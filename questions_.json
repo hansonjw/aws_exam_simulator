@@ -1,0 +1,1713 @@
+[
+  {
+    "Id": 1,
+    "QuestionText": "How can idempotency be achieved in Lambda's design?",
+    "Options": [
+      "Increase the execution time of the Lambda function",
+      "Use UUIDs for tracking requests to prevent duplicate processing",
+      "Use a stateful approach for all functions",
+      "Always use POST method in APIs"
+    ],
+    "Explanation": "Idempotency ensures that multiple executions of the same operation produce the same result without side effects. Using UUIDs (Universally Unique Identifiers) to track requests allows Lambda functions to detect and prevent duplicate processing, ensuring that retries or concurrent invocations don't cause unintended duplicate actions.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 2,
+    "QuestionText": "What does transition from capital expenditures to operational expenditures entail in the context of cloud computing?",
+    "Options": [
+      "Transitioning to on-premises infrastructure.",
+      "Leasing services and servers from a cloud provider.",
+      "Buying servers and hiring personnel to manage them.",
+      "Building a new data center."
+    ],
+    "Explanation": "The transition from capital expenditures (CapEx) to operational expenditures (OpEx) in cloud computing means moving from upfront investments in hardware and infrastructure to a pay-as-you-go model. Instead of purchasing servers and data centers, organizations lease services and computing resources from cloud providers like AWS, paying only for what they use.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 3,
+    "QuestionText": "Which AWS service is specifically designed for managing and storing Docker container images?",
+    "Options": [
+      "AWS Fargate",
+      "AWS Elastic Beanstalk",
+      "Amazon ECS",
+      "Amazon ECR"
+    ],
+    "Explanation": "Amazon Elastic Container Registry (ECR) is a fully managed Docker container registry service that makes it easy to store, manage, and deploy Docker container images. ECR is integrated with Amazon ECS and Amazon EKS for seamless container orchestration. AWS Fargate and ECS are container compute services, while Elastic Beanstalk is a platform-as-a-service offering.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 4,
+    "QuestionText": "What is the primary purpose of API Gateway stages in AWS?",
+    "Options": [
+      "To provide transport layer security for API endpoints.",
+      "To manage and deploy Lambda functions within an API.",
+      "To create and maintain custom domain names for APIs.",
+      "To version control and represent different environments in the API lifecycle."
+    ],
+    "Explanation": "API Gateway stages represent snapshots of your API at different points in its lifecycle, typically corresponding to different environments like development, staging, and production. Stages allow you to version control your API, manage deployments, configure throttling and caching per environment, and maintain separate API configurations for different deployment stages.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 5,
+    "QuestionText": "Which of the following statements best describes the primary difference between AppSync and Cognito Sync based on the provided information?",
+    "Options": [
+      "AppSync is primarily for building real-time chat applications while Cognito Sync is used for storing mobile application data.",
+      "AppSync is developed by Facebook, while Cognito Sync is developed by OpenAI.",
+      "Both AppSync and Cognito Sync are used for real-time and offline data synchronization.",
+      "AppSync offers a method for building real-time and offline-capable applications with GraphQL support, while Cognito Sync is mainly used for synchronizing profile information across mobile devices with Cognito user pools."
+    ],
+    "Explanation": "AWS AppSync is a managed service that uses GraphQL to make it easy to build real-time and offline-capable applications. It provides data synchronization capabilities with support for real-time subscriptions. Cognito Sync was a service for synchronizing user profile data across devices, but it has been deprecated in favor of AppSync, which offers more robust real-time and offline capabilities with GraphQL support.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 6,
+    "QuestionText": "Which deployment strategy in Elastic Beanstalk causes an outage by shutting everything off, updating it, and then bringing it up?",
+    "Options": [
+      "All-at-once.",
+      "Rolling with additional batch.",
+      "Rolling.",
+      "Immutable."
+    ],
+    "Explanation": "The 'All-at-once' deployment strategy in Elastic Beanstalk updates all instances simultaneously by shutting down the entire environment, applying updates, and then bringing everything back up. This causes downtime but ensures all instances are updated at once. Rolling deployments update instances in batches to maintain availability, while Immutable deployments create new instances alongside old ones.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 7,
+    "QuestionText": "What is the purpose of AWS Secrets Manager?",
+    "Options": [
+      "To provide access to environment variables.",
+      "To track changes to AWS infrastructure.",
+      "To provide a graphical interface for managing AWS resources.",
+      "To store, manage, and rotate sensitive information securely."
+    ],
+    "Explanation": "AWS Secrets Manager is a service that helps you protect secrets needed to access your applications, services, and IT resources. It enables you to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Secrets Manager can automatically rotate secrets for supported AWS services like RDS, Redshift, and DocumentDB.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 8,
+    "QuestionText": "Which of the following points is a recommended practice when using unit tests and AWS CodeBuild?",
+    "Options": [
+      "The outcome of unit tests should never influence the continuation or halting of a deployment.",
+      "Unit testing in CodeBuild helps maintain code quality, catch errors early, and streamline the testing process.",
+      "The buildspec.yml file is only used for defining build commands and has no phase dedicated to testing.",
+      "A good practice is to group several significant changes into one unit test to save time."
+    ],
+    "Explanation": "Unit testing in AWS CodeBuild is a best practice that helps maintain code quality by catching errors early in the development process. CodeBuild's buildspec.yml file includes a test phase where unit tests can be executed, and the build process can be configured to fail if tests don't pass, preventing deployment of faulty code.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 9,
+    "QuestionText": "What is the key benefit of using AWS CloudWatch Logs in a cloud-based infrastructure?",
+    "Options": [
+      "Creating and managing AWS resources.",
+      "Storing and analyzing log data generated by AWS services.",
+      "Real-time monitoring of AWS resources.",
+      "Automating the deployment of AWS services."
+    ],
+    "Explanation": "AWS CloudWatch Logs is a service for monitoring, storing, and accessing log files from AWS resources and applications. It enables you to centralize logs from EC2 instances, Lambda functions, and other AWS services, making it easier to search, filter, and analyze log data for troubleshooting and monitoring purposes.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 10,
+    "QuestionText": "Which of the following best describes CRUD in the context of AWS development?",
+    "Options": [
+      "A caching mechanism used in AWS to store frequently accessed data.",
+      "A memory caching service that ensures data consistency.",
+      "The name of an AWS service dedicated to database operations.",
+      "A set of HTTP methods associated with RESTful API endpoints."
+    ],
+    "Explanation": "CRUD stands for Create, Read, Update, and Delete - the four basic operations for persistent storage. In the context of AWS development and RESTful APIs, CRUD operations are typically mapped to HTTP methods: POST (Create), GET (Read), PUT/PATCH (Update), and DELETE (Delete). This is a fundamental concept in API design.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 11,
+    "QuestionText": "Which AWS service provides serverless compute capabilities and allows users to run code without managing the underlying infrastructure?",
+    "Options": [
+      "AWS Lambda",
+      "Amazon RDS",
+      "Amazon EC2",
+      "Amazon S3"
+    ],
+    "Explanation": "AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers. You simply upload your code and Lambda handles all the infrastructure management, automatic scaling, and high availability. You pay only for the compute time you consume.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 12,
+    "QuestionText": "Which AWS service provides a serverless compute environment for running code in response to events and automatically manages the compute resources required?",
+    "Options": [
+      "Amazon EC2",
+      "Amazon ECS",
+      "AWS Lambda",
+      "AWS Elastic Beanstalk"
+    ],
+    "Explanation": "AWS Lambda is an event-driven, serverless compute service that automatically manages the compute resources required to run your code. It responds to events from over 200 AWS services and software-as-a-service applications, automatically scaling from a few requests per day to thousands per second.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 13,
+    "QuestionText": "What is CloudFront primarily used for in AWS?",
+    "Options": [
+      "Storing data in a scalable and redundant manner.",
+      "Providing a global content delivery network to distribute content.",
+      "Generating and managing SSL/TLS certificates.",
+      "Creating virtual private networks for secure communication."
+    ],
+    "Explanation": "Amazon CloudFront is a global content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers worldwide with low latency and high transfer speeds. CloudFront integrates with other AWS services and works seamlessly with data sources like S3, EC2, or any custom origin server.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 14,
+    "QuestionText": "Which of the following best describes AWS Amplify?",
+    "Options": [
+      "A web browser tool exclusive for deploying mobile applications.",
+      "An interface to interact with AWS Lambda functions only.",
+      "A developer tool for creating secure cloud-powered serverless applications.",
+      "A security software to protect AWS instances."
+    ],
+    "Explanation": "AWS Amplify is a development platform that provides a set of tools and services to help developers build secure, scalable full-stack cloud applications. It supports web and mobile applications, provides backend services, and integrates with various AWS services to create serverless applications quickly.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 15,
+    "QuestionText": "What is AWS CloudFormation primarily used for?",
+    "Options": [
+      "To monitor AWS services and provide alerts.",
+      "To deploy machine learning models on AWS.",
+      "To store large data sets in a scalable manner.",
+      "To model, provision, and manage AWS infrastructure as code."
+    ],
+    "Explanation": "AWS CloudFormation is an Infrastructure as Code (IaC) service that allows you to model and provision AWS resources using templates written in JSON or YAML. It enables you to create, update, and delete collections of AWS resources predictably and repeatedly, managing your entire infrastructure as code.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 16,
+    "QuestionText": "What is the time limit for completing the AWS Developer Associate certification exam, which includes 65 questions?",
+    "Options": [
+      "150 minutes",
+      "120 minutes",
+      "130 minutes",
+      "90 minutes"
+    ],
+    "Explanation": "The AWS Certified Developer - Associate (DVA-C02) exam consists of 65 questions and has a time limit of 130 minutes. This allows approximately 2 minutes per question, giving candidates adequate time to read and answer each question carefully.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 17,
+    "QuestionText": "What is AWS Athena primarily used for?",
+    "Options": [
+      "Performing high-performance analytics on large datasets in Redshift.",
+      "Analyzing data stored in Amazon S3 using SQL queries.",
+      "Running serverless functions in AWS Lambda.",
+      "Extracting, transforming, and loading data in AWS Glue."
+    ],
+    "Explanation": "Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there's no infrastructure to manage, and you pay only for the queries you run. It works directly with data stored in S3 without requiring data loading or transformation.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 18,
+    "QuestionText": "Which of the following accurately describes the difference between at-rest and in-transit encryption?",
+    "Options": [
+      "At-rest encryption is the encryption of data while it is stored and not being accessed, while in-transit encryption pertains to the encryption of data as it is being transferred between locations.",
+      "At-rest encryption is the encryption of data as it is moving, while in-transit encryption is the encryption of data while it is stored.",
+      "At-rest encryption involves tapping into network cables to listen to data transfer, while in-transit encryption is about securing data from eavesdropping.",
+      "At-rest encryption and in-transit encryption both refer to the encryption of data while it is being manipulated."
+    ],
+    "Explanation": "At-rest encryption protects data when it is stored and not actively being accessed or transferred. In-transit encryption (also called encryption in motion) protects data as it travels between locations over a network. Both are important security practices, but they protect data at different stages: at-rest when stored, and in-transit when moving.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 19,
+    "QuestionText": "Which of the following statements best describes the principle of least privilege in AWS?",
+    "Options": [
+      "Granting users maximum permissions necessary to get their job done.",
+      "Granting users the minimum permissions necessary to get their job done.",
+      "Assign permissions based on job titles without reviewing individual tasks.",
+      "Allow users unlimited access to ensure they can complete all tasks."
+    ],
+    "Explanation": "The principle of least privilege is a security best practice that means granting users and applications only the minimum permissions necessary to perform their required tasks. This reduces the risk of accidental or malicious access to sensitive resources and follows the security principle of minimizing the attack surface.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 20,
+    "QuestionText": "Why is getting AWS certification beneficial?",
+    "Options": [
+      "To demonstrate one's ability to pass tests.",
+      "To gain increased job opportunities, higher earning potential, recognition as an expert, and access to a network of certified professionals.",
+      "To get free access to AWS services.",
+      "To understand the difference between capital expenditures and operational expenditures."
+    ],
+    "Explanation": "AWS certifications provide numerous benefits including increased job opportunities and higher earning potential. They demonstrate validated expertise, provide recognition in the industry, and grant access to the AWS Certified Global Community, which offers networking opportunities with other certified professionals and exclusive events.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 21,
+    "QuestionText": "What does transition from capital expenditures to operational expenditures entail in the context of cloud computing?",
+    "Options": [
+      "Transitioning to on-premises infrastructure.",
+      "Leasing services and servers from a cloud provider.",
+      "Buying servers and hiring personnel to manage them.",
+      "Building a new data center."
+    ],
+    "Explanation": "The transition from capital expenditures (CapEx) to operational expenditures (OpEx) in cloud computing means moving from purchasing physical infrastructure to leasing cloud services. Instead of buying servers and hiring staff to manage them, organizations pay cloud providers for computing resources on a pay-as-you-go basis, converting upfront capital costs into ongoing operational expenses.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 22,
+    "QuestionText": "Which of the following domains is NOT covered in the DVA-C02 AWS Developer Associate certification exam?",
+    "Options": [
+      "Data visualizations",
+      "Deployment",
+      "Mobile application development",
+      "Architectural patterns"
+    ],
+    "Explanation": "The DVA-C02 AWS Developer Associate certification exam covers domains including deployment, security, development with AWS services, refactoring, monitoring and troubleshooting, but it does NOT include mobile application development as a separate domain. The exam focuses on serverless and cloud-native application development.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 23,
+    "QuestionText": "What is the primary purpose of the AWS Developer Associate certification?",
+    "Options": [
+      "To demonstrate entry-level knowledge and skills for an AWS developer role.",
+      "To give access to a network of certified professionals.",
+      "To confirm understanding of the foundational aspects of AWS.",
+      "To show expertise in AWS."
+    ],
+    "Explanation": "The AWS Certified Developer - Associate certification is designed to validate entry-level knowledge and skills for an AWS developer role. It demonstrates the candidate's ability to develop, deploy, and debug cloud-based applications using AWS services, making it appropriate for developers beginning their AWS journey.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 24,
+    "QuestionText": "Which of the following best describes the exam format for the AWS Developer Associate certification exam (DVA-C02)?",
+    "Options": [
+      "The exam is 130 minutes long and requires a passing score greater than 720 out of 1000.",
+      "Multiple choice questions will have two correct responses out of five.",
+      "There are 65 questions, and all are counted for the final score.",
+      "There are 50 questions, and each will have one correct response out of three options."
+    ],
+    "Explanation": "The AWS Developer Associate certification exam (DVA-C02) format includes 65 questions to be completed in 130 minutes, with a passing score of 720 out of 1000 points (72%). The exam uses multiple-choice and multiple-response question formats, and all questions count toward the final score.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 25,
+    "QuestionText": "Which of the following is NOT a type of at-rest encryption key?",
+    "Options": [
+      "AWS-managed keys",
+      "Customer-generated keys",
+      "AWS-owned keys",
+      "Server-side encryption keys"
+    ],
+    "Explanation": "At-rest encryption keys in AWS include AWS-managed keys (managed by AWS services), customer-managed keys (created and managed by customers through KMS), and AWS-owned keys (used by AWS services but not visible to customers). 'Server-side encryption keys' is not a distinct type of key; it's a general term describing where encryption occurs, not a key management approach.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 26,
+    "QuestionText": "What is the primary purpose of AWS Certificate Manager (ACM)?",
+    "Options": [
+      "Network traffic monitoring.",
+      "Storage of large files on AWS.",
+      "Machine learning model deployment.",
+      "Provisioning and management of TLS certificates."
+    ],
+    "Explanation": "AWS Certificate Manager (ACM) is a service that lets you provision, manage, and deploy public and private SSL/TLS certificates for use with AWS services and your internal connected resources. ACM removes the complexity of purchasing, uploading, and renewing SSL/TLS certificates.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 27,
+    "QuestionText": "How does ACM verify the ownership of a domain for which a certificate is requested?",
+    "Options": [
+      "By requesting a text record via DNS.",
+      "By validating the website content.",
+      "By sending an email to the domain owner.",
+      "By checking the IP address associated with the domain."
+    ],
+    "Explanation": "AWS Certificate Manager (ACM) verifies domain ownership through DNS validation by requesting that you add a specific CNAME record to your domain's DNS configuration. This DNS-based validation method is more secure and flexible than email validation, as it doesn't require access to specific email addresses.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 28,
+    "QuestionText": "Which of the following statements regarding AWS Key Management Service (KMS) is NOT true?",
+    "Options": [
+      "Envelope encryption involves encrypting the data key with a customer master key and encrypting the contained data.",
+      "KMS supports both asymmetric and symmetric key cryptography.",
+      "The AWS services such as S3, EBS, RDS, and Lambda can integrate with KMS for encrypting data at-rest.",
+      "KMS is primarily used for data migration between AWS services."
+    ],
+    "Explanation": "AWS Key Management Service (KMS) is a managed service that makes it easy to create and control encryption keys. KMS supports both symmetric and asymmetric cryptography, integrates with many AWS services for at-rest encryption, and uses envelope encryption. However, KMS is not used for data migration between services; it's specifically for key management and encryption.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 29,
+    "QuestionText": "Which of the following is NOT a recommended best practice for environment variables?",
+    "Options": [
+      "Separating code and configuration.",
+      "Using different variable values for deployment, staging, and production.",
+      "Storing sensitive information such as passwords in environment variables.",
+      "Version controlling your environment variables."
+    ],
+    "Explanation": "Best practices for environment variables include separating code and configuration, using different values for different environments, and version controlling them. However, storing sensitive information like passwords directly in environment variables is NOT recommended. Instead, sensitive data should be stored in AWS Secrets Manager or Parameter Store, which provide encryption and access control.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 30,
+    "QuestionText": "What is a key best practice when handling credentials in application development?",
+    "Options": [
+      "Storing keys directly in the code.",
+      "Using the same key for multiple applications.",
+      "Distributing keys via email to team members.",
+      "Not embedding keys in the code and using roles or services like Secrets Manager."
+    ],
+    "Explanation": "A key best practice for handling credentials is to never embed keys directly in application code. Instead, use IAM roles for AWS services (which provide temporary credentials automatically) or AWS Secrets Manager/Parameter Store for storing and retrieving secrets securely. This prevents credential exposure in code repositories and enables automatic rotation.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 31,
+    "QuestionText": "Which of the following AWS services can be used for secure credential handling, specifically for storing secret information?",
+    "Options": [
+      "AWS Config",
+      "AWS Organizations",
+      "Secrets Manager",
+      "AWS Artifact"
+    ],
+    "Explanation": "AWS Secrets Manager is specifically designed for secure credential handling and storing secret information such as database passwords, API keys, and other sensitive data. It provides automatic rotation, encryption at rest, and fine-grained access control. AWS Config tracks infrastructure changes, Organizations manages accounts, and Artifact provides compliance reports.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 32,
+    "QuestionText": "What is the purpose of AWS Secrets Manager?",
+    "Options": [
+      "To provide access to environment variables.",
+      "To track changes to AWS infrastructure.",
+      "To provide a graphical interface for managing AWS resources.",
+      "To store, manage, and rotate sensitive information securely."
+    ],
+    "Explanation": "AWS Secrets Manager is designed to store, manage, and rotate sensitive information securely. It can automatically rotate secrets for supported AWS services like RDS, Redshift, and DocumentDB, helping you meet compliance requirements and reduce the risk of compromised credentials.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 33,
+    "QuestionText": "How can idempotency be achieved in Lambda's design?",
+    "Options": [
+      "Increase the execution time of the Lambda function",
+      "Use UUIDs for tracking requests to prevent duplicate processing",
+      "Use a stateful approach for all functions",
+      "Always use POST method in APIs"
+    ],
+    "Explanation": "Idempotency in Lambda functions ensures that repeated executions with the same input produce the same result without side effects. Using UUIDs (Universally Unique Identifiers) to track requests allows the function to identify and prevent duplicate processing, which is essential for handling retries, concurrent invocations, or network issues that might cause the same event to be processed multiple times.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 34,
+    "QuestionText": "Which statement best describes the Serverless Application Model (SAM) provided by AWS?",
+    "Options": [
+      "SAM is an AWS service for monitoring serverless applications.",
+      "SAM is a proprietary tool used to package AWS applications.",
+      "SAM is an open-source framework for building serverless applications on AWS.",
+      "SAM is an open-source framework for deploying applications on AWS."
+    ],
+    "Explanation": "AWS Serverless Application Model (SAM) is an open-source framework for building serverless applications on AWS. It extends AWS CloudFormation with a simplified syntax for defining serverless resources like Lambda functions, API Gateway APIs, and DynamoDB tables, making it easier to build and deploy serverless applications.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 35,
+    "QuestionText": "Which of the following is NOT an architectural pattern discussed in relation to AWS Lambda?",
+    "Options": [
+      "Layered",
+      "Client-server",
+      "Round-robin",
+      "MVC"
+    ],
+    "Explanation": "Common architectural patterns for AWS Lambda include Layered Architecture (separating concerns into layers), Client-Server pattern, and MVC (Model-View-Controller). Round-robin is a load balancing algorithm, not an architectural pattern for Lambda functions.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 36,
+    "QuestionText": "Which of the following statements is true regarding AWS SDKs and APIs?",
+    "Options": [
+      "The AWS SDKs do not handle rate limiting for you.",
+      "AWS does not offer direct API access to their services.",
+      "SDKs allow developers to interact with AWS services programmatically.",
+      "AWS services can only be accessed through the web console."
+    ],
+    "Explanation": "AWS SDKs (Software Development Kits) are libraries that allow developers to interact with AWS services programmatically from their applications. They provide language-specific APIs that abstract away the complexity of making direct API calls, handle authentication, retries, and provide a more convenient interface than making raw HTTP requests.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 37,
+    "QuestionText": "What is a significant benefit of using roles with EC2 instances, especially when using SDKs?",
+    "Options": [
+      "Developers must manually input AWS keys in their code for SDK authentication.",
+      "Roles provide granular permissions to resources without the need to store AWS keys on the instance.",
+      "EC2 instances with roles cannot interact with other AWS services like DynamoDB.",
+      "The EC2 instances automatically get administrator access to all AWS services."
+    ],
+    "Explanation": "IAM roles for EC2 instances provide a secure way to grant permissions to applications running on the instance without storing AWS access keys in code or configuration files. The role provides temporary credentials that are automatically rotated, eliminating the security risk of hardcoded credentials and simplifying credential management.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 38,
+    "QuestionText": "Which deployment strategy in Elastic Beanstalk causes an outage by shutting everything off, updating it, and then bringing it up?",
+    "Options": [
+      "All-at-once.",
+      "Rolling with additional batch.",
+      "Rolling.",
+      "Immutable."
+    ],
+    "Explanation": "The 'All-at-once' deployment strategy in Elastic Beanstalk updates all instances simultaneously by taking the entire environment offline, applying updates, and then bringing it back online. This causes downtime but ensures all instances are updated together. Other strategies like Rolling or Immutable maintain availability during deployment.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 39,
+    "QuestionText": "What does the EC2 in AWS stand for and what is its primary function?",
+    "Options": [
+      "Enhanced Container Cluster - A service for managing Docker containers.",
+      "Elastic Compute Control - A service to balance traffic across servers.",
+      "Encrypted Code Creator - A service to encrypt code for AWS services.",
+      "Elastic Compute Cloud - A service that lets you launch virtual machines in the cloud."
+    ],
+    "Explanation": "EC2 stands for Elastic Compute Cloud. It is AWS's core compute service that provides resizable compute capacity in the cloud, allowing you to launch virtual machines (instances) with various operating systems, instance types, and configurations. EC2 gives you complete control over your computing resources.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 40,
+    "QuestionText": "Which platforms are supported by Elastic Beanstalk?",
+    "Options": [
+      "C++, Swift, and Kotlin.",
+      "Only Java and .NET",
+      "Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker.",
+      "Just Docker."
+    ],
+    "Explanation": "AWS Elastic Beanstalk supports multiple platforms including Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker. This allows developers to deploy applications written in their preferred language or framework without managing the underlying infrastructure. Beanstalk automatically handles capacity provisioning, load balancing, and application health monitoring.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 41,
+    "QuestionText": "Which of the following accurately describes AWS Simple Storage Service (S3)?",
+    "Options": [
+      "A cloud-based service for computing resources on demand.",
+      "A database service offered by AWS to store relational data.",
+      "A service offered by AWS to execute code in response to certain events.",
+      "A service for storing and retrieving any amount of data from anywhere, allowing objects up to 5 terabytes in size."
+    ],
+    "Explanation": "Amazon S3 (Simple Storage Service) is an object storage service that offers industry-leading scalability, data availability, security, and performance. It can store and retrieve any amount of data from anywhere, with individual objects up to 5 terabytes in size. S3 is designed for 99.999999999% (11 9's) of durability.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 42,
+    "QuestionText": "Which of the following statements is true about DynamoDB?",
+    "Options": [
+      "DynamoDB is just like MongoDB in that both are NoSQL databases.",
+      "All data in DynamoDB is stored without encryption in transit.",
+      "DynamoDB primary keys consist of a single attribute called the partition key.",
+      "DynamoDB is a managed relational database offering from Amazon Web Services."
+    ],
+    "Explanation": "DynamoDB and MongoDB are both NoSQL databases, but DynamoDB is a fully managed AWS service while MongoDB can be self-managed or use MongoDB Atlas. DynamoDB encrypts data in transit by default, supports both partition keys and composite keys (partition + sort key), and is a managed NoSQL database service, not relational.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 43,
+    "QuestionText": "Which of the following statements about AWS S3 is false?",
+    "Options": [
+      "When creating an S3 bucket, users have the option to copy settings from an existing bucket.",
+      "Replicating objects from one S3 bucket to another requires versioning to be enabled on both source and destination buckets.",
+      "Once bucket versioning is enabled, it cannot be suspended."
+    ],
+    "Explanation": "S3 bucket versioning can be enabled or suspended at any time. When versioning is enabled, S3 stores multiple versions of objects, but you can suspend versioning if needed. However, once versioning is suspended, existing versions remain but new versions are not created. The statement that versioning cannot be suspended is false.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 44,
+    "QuestionText": "Which of the following best describes CRUD in the context of AWS development?",
+    "Options": [
+      "A caching mechanism used in AWS to store frequently accessed data.",
+      "A memory caching service that ensures data consistency.",
+      "The name of an AWS service dedicated to database operations.",
+      "A set of HTTP methods associated with RESTful API endpoints."
+    ],
+    "Explanation": "CRUD (Create, Read, Update, Delete) represents the four basic operations for persistent storage. In RESTful API design and AWS development, these operations map to HTTP methods: POST for Create, GET for Read, PUT/PATCH for Update, and DELETE for Delete. This is a fundamental pattern in API development.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 45,
+    "QuestionText": "Which of the following statements about AWS Cloud9 is NOT true?",
+    "Options": [
+      "AWS Cloud9 integrates directly with other AWS services and has the command line interface pre-installed.",
+      "AWS Cloud9 provides a cloud-based integrated development environment accessed via a web browser.",
+      "AWS Cloud9 is primarily designed for mobile application development and is optimized for smartphone use.",
+      "AWS Cloud9 supports collaborative features, allowing multiple developers to work on the same code base with real-time updates."
+    ],
+    "Explanation": "AWS Cloud9 is a cloud-based integrated development environment (IDE) that you can access from a web browser. It's designed for general software development, not specifically for mobile applications or smartphone use. Cloud9 provides a collaborative coding environment with real-time updates and pre-installed AWS CLI and SDKs.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 46,
+    "QuestionText": "Which of the following best describes AWS Amplify?",
+    "Options": [
+      "A web browser tool exclusive for deploying mobile applications.",
+      "An interface to interact with AWS Lambda functions only.",
+      "A developer tool for creating secure cloud-powered serverless applications.",
+      "A security software to protect AWS instances."
+    ],
+    "Explanation": "AWS Amplify is a comprehensive development platform that helps developers build secure, scalable full-stack cloud applications. It provides libraries, UI components, and a CLI to simplify the development of web and mobile applications with backend services, authentication, storage, and API integration.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 47,
+    "QuestionText": "Which of the following statements best describes AWS CodeStar?",
+    "Options": [
+      "CodeStar exclusively focuses on machine learning application development.",
+      "CodeStar is a project management tool that simplifies the creation of an application within AWS, integrating services like CodeCommit, CodeBuild, CodeDeploy, and CodePipeline.",
+      "CodeStar is primarily a continuous integration service focusing only on deploying applications.",
+      "CodeStar is a service for creating Lambda applications but doesn't support web application development."
+    ],
+    "Explanation": "AWS CodeStar is a cloud-based development service that provides a unified user interface for managing software development activities on AWS. It integrates services like CodeCommit, CodeBuild, CodeDeploy, and CodePipeline to set up a complete CI/CD toolchain, making it easier to develop, build, and deploy applications on AWS.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 48,
+    "QuestionText": "Which of the following best describes the primary function of Amazon CodeGuru?",
+    "Options": [
+      "A tool for generating visualizations of application metrics.",
+      "An AI-powered service designed to review and optimize code by providing ML-powered recommendations.",
+      "A tool for monitoring the runtime of applications and presenting detailed reports.",
+      "An AWS service to provide data protection compliance checks such as SOC, ISO, and PCI DSS."
+    ],
+    "Explanation": "Amazon CodeGuru is an AI-powered service that uses machine learning to automatically review code and identify issues, security vulnerabilities, and performance bottlenecks. It provides intelligent recommendations to improve code quality and application performance, helping developers write better code and optimize their applications.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 49,
+    "QuestionText": "What is CloudFront primarily used for in AWS?",
+    "Options": [
+      "Storing data in a scalable and redundant manner.",
+      "Providing a global content delivery network to distribute content.",
+      "Generating and managing SSL/TLS certificates.",
+      "Creating virtual private networks for secure communication."
+    ],
+    "Explanation": "Amazon CloudFront is a global content delivery network (CDN) service that accelerates delivery of websites, APIs, video content, and other web assets to users worldwide. It uses a network of edge locations to cache content closer to users, reducing latency and improving performance.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 50,
+    "QuestionText": "Which of the following statements best describes the AWS Web Application Firewall (WAF)?",
+    "Options": [
+      "AWS WAF is a tool that primarily focuses on blocking malicious actors based on their geographical locations.",
+      "AWS WAF is a feature of AWS that specifically helps in monitoring the data stored in Amazon S3 buckets.",
+      "AWS WAF is a security feature in AWS that helps monitor and control web traffic, integrating with services like CloudFront and API Gateway, and allows administrators to create customizable security rules.",
+      "AWS WAF is a service in AWS that solely manages access controls for other AWS services."
+    ],
+    "Explanation": "AWS WAF (Web Application Firewall) is a security service that helps protect web applications from common web exploits and bots. It integrates with CloudFront, API Gateway, and Application Load Balancer, allowing you to create customizable security rules to filter and monitor HTTP/HTTPS traffic based on conditions you define.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 51,
+    "QuestionText": "Which of the following statements is true regarding Amazon's Route 53?",
+    "Options": [
+      "Route 53 translates domain names into MAC addresses.",
+      "Route 53 can only be managed through the AWS web console.",
+      "Route 53 is named after the UDP Port 53 which is used for the DNS system.",
+      "Route 53 is an application streaming service that allows users to access desktop applications from anywhere."
+    ],
+    "Explanation": "Route 53 is named after TCP/UDP port 53, which is the port used by the DNS (Domain Name System) protocol. Route 53 is AWS's scalable and highly available DNS web service that translates human-readable domain names into IP addresses and provides domain registration, health checking, and traffic routing capabilities.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 52,
+    "QuestionText": "When using AWS CloudFormation, what is a \"drift\"?",
+    "Options": [
+      "A special type of AWS instance designed for high-compute tasks.",
+      "The migration of data from one AWS region to another.",
+      "A mismatch between the CloudFormation template's expected resources and the actual existing resources.",
+      "A change in cost due to fluctuating AWS service prices."
+    ],
+    "Explanation": "CloudFormation drift occurs when the actual configuration of a resource differs from what the CloudFormation template expects. This can happen when resources are modified outside of CloudFormation (manually or by other tools). Drift detection helps identify these discrepancies so you can bring resources back into compliance with your template.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 53,
+    "QuestionText": "AWS Systems Manager offers a variety of services to help manage and oversee AWS resources and applications. Which of the following options accurately defines the \"Session Manager\" feature of AWS Systems Manager?",
+    "Options": [
+      "It enables secure access and management of instances without requiring bastion hosts or opening inbound ports.",
+      "It provides automated sessions to validate and update security patches across multiple EC2 instances.",
+      "It allows users to allocate sessions for data migration between on-premises and AWS databases.",
+      "It facilitates the storage of key-value data such as passwords, database connection strings, and license codes."
+    ],
+    "Explanation": "AWS Systems Manager Session Manager provides secure, auditable access to EC2 instances, edge devices, and on-premises servers without requiring bastion hosts, SSH keys, or open inbound ports. It uses IAM for authentication and CloudWatch Logs for session logging, providing a more secure alternative to traditional remote access methods.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 54,
+    "QuestionText": "What is AWS CloudFormation primarily used for?",
+    "Options": [
+      "To monitor AWS services and provide alerts.",
+      "To deploy machine learning models on AWS.",
+      "To store large data sets in a scalable manner.",
+      "To model, provision, and manage AWS infrastructure as code."
+    ],
+    "Explanation": "AWS CloudFormation is an Infrastructure as Code (IaC) service that enables you to model and provision AWS resources using declarative templates. It allows you to create, update, and delete entire stacks of AWS resources in a predictable and repeatable way, managing your infrastructure as version-controlled code.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 55,
+    "QuestionText": "Which of the following best describes the purpose of using AWS CloudFormation \"change sets\"?",
+    "Options": [
+      "To migrate resources from one AWS region to another.",
+      "To monitor and log access to AWS resources.",
+      "To obtain a summary of proposed changes to a stack before applying them.",
+      "To automatically update all resources within a CloudFormation stack."
+    ],
+    "Explanation": "CloudFormation change sets allow you to preview how proposed changes to a stack will affect your running resources before you implement them. Change sets show you a summary of what will be created, modified, or deleted, helping you understand the impact of changes and catch potential issues before applying them.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 56,
+    "QuestionText": "The buildspec.yml file is a crucial file in AWS. Which of the following statements accurately describes the buildspec.yml file?",
+    "Options": [
+      "CodeStar always provides the only acceptable version of the buildspec.yml file.",
+      "The buildspec.yml only supports JavaScript and no other programming language.",
+      "The buildspec.yml contains phases like install, pre-build, post-build, and artifacts.",
+      "The buildspec.yml file exclusively defines the testing commands and has no reference to building instructions."
+    ],
+    "Explanation": "The buildspec.yml file in AWS CodeBuild defines the build commands and related settings. It contains multiple phases including install (install dependencies), pre_build (commands before build), build (build commands), post_build (commands after build), and artifacts (output files). This structure allows for comprehensive build and test workflows.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 57,
+    "QuestionText": "Which of the following is a key advantage of using mock integrations in API Gateway during the development process?",
+    "Options": [
+      "Immediate deployment of Lambda functions.",
+      "Enhanced security for API endpoints.",
+      "Real-time data synchronization with backend services.",
+      "Accelerated front-end development without backend dependencies."
+    ],
+    "Explanation": "Mock integrations in API Gateway allow front-end developers to develop and test their applications without waiting for backend services to be fully implemented. Mock integrations return static responses, enabling parallel development where front-end teams can work independently while backend services are being developed.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 58,
+    "QuestionText": "Which of the following points is a recommended practice when using unit tests and AWS CodeBuild?",
+    "Options": [
+      "The outcome of unit tests should never influence the continuation or halting of a deployment.",
+      "Unit testing in CodeBuild helps maintain code quality, catch errors early, and streamline the testing process.",
+      "The buildspec.yml file is only used for defining build commands and has no phase dedicated to testing.",
+      "A good practice is to group several significant changes into one unit test to save time."
+    ],
+    "Explanation": "Unit testing in CodeBuild is a best practice that helps maintain code quality by catching errors early in the development lifecycle. The buildspec.yml file includes a test phase, and build processes should be configured to fail if unit tests don't pass, preventing deployment of faulty code and streamlining the overall development process.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 59,
+    "QuestionText": "What is the primary purpose of mock endpoints in API Gateway?",
+    "Options": [
+      "To enforce IAM authentication for both app developers and API developers.",
+      "To automatically integrate with DynamoDB and return a list of results.",
+      "To directly expose Lambda functions to the internet.",
+      "To provide a way for app developers to test the API without the need for the backend logic."
+    ],
+    "Explanation": "Mock endpoints in API Gateway return static responses without calling backend services. They enable front-end developers to test API integrations and develop user interfaces without requiring the actual backend logic to be implemented, facilitating parallel development and faster iteration cycles.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 60,
+    "QuestionText": "What is the primary purpose of using versions and aliases in AWS Lambda?",
+    "Options": [
+      "To create a duplicate of a Lambda function for redundancy.",
+      "To enable real-time monitoring of Lambda function performance.",
+      "To manage AWS Lambda billing and cost optimization.",
+      "To control versioning and deployment stages of Lambda code."
+    ],
+    "Explanation": "Lambda versions create immutable snapshots of your function code and configuration, while aliases are pointers to specific versions. Together, they enable you to manage different deployment stages (dev, staging, prod), implement blue/green deployments, gradually roll out changes, and maintain multiple versions of your function for different environments or features.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 61,
+    "QuestionText": "What is the purpose of stage variables in AWS API Gateway?",
+    "Options": [
+      "They enable dynamic configuration and parameterization of API behavior per stage.",
+      "They are used to define custom domain names for API endpoints.",
+      "They provide transport layer security for API communications.",
+      "They allow you to version control Lambda functions within an API."
+    ],
+    "Explanation": "Stage variables in API Gateway are key-value pairs that you can define as configuration attributes associated with a deployment stage. They enable you to parameterize your API configuration, making it easy to use different endpoint URLs, Lambda function names, or other settings for different stages (dev, staging, prod) without changing your API definition.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 62,
+    "QuestionText": "What is the primary purpose of API Gateway stages in AWS?",
+    "Options": [
+      "To provide transport layer security for API endpoints.",
+      "To manage and deploy Lambda functions within an API.",
+      "To create and maintain custom domain names for APIs.",
+      "To version control and represent different environments in the API lifecycle."
+    ],
+    "Explanation": "API Gateway stages represent snapshots of your API at different points in its lifecycle. They allow you to version control your API, manage separate deployments for different environments (development, staging, production), configure throttling and caching per stage, and maintain different API configurations for each deployment stage.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 63,
+    "QuestionText": "What is the purpose of CI/CD in software development?",
+    "Options": [
+      "To manage code repositories and handle version control.",
+      "To automate the build, test, and deployment processes of development.",
+      "To optimize user interface design and user experience.",
+      "To improve server infrastructure and scalability."
+    ],
+    "Explanation": "CI/CD (Continuous Integration/Continuous Deployment) automates the software development workflow by automatically building, testing, and deploying code changes. This automation reduces manual errors, speeds up the development cycle, enables faster feedback, and ensures consistent deployments across environments.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 64,
+    "QuestionText": "Which AWS service is commonly used for automating the build and deployment stages in a CI/CD pipeline?",
+    "Options": [
+      "AWS CodeBuild",
+      "AWS Lambda",
+      "Amazon EC2",
+      "Amazon S3"
+    ],
+    "Explanation": "AWS CodeBuild is a fully managed build service that compiles source code, runs tests, and produces ready-to-deploy software packages. It's commonly used in CI/CD pipelines to automate the build and deployment stages, integrating seamlessly with other AWS developer tools like CodePipeline, CodeCommit, and CodeDeploy.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 65,
+    "QuestionText": "What is the primary purpose of unit testing in software development?",
+    "Options": [
+      "To ensure that the application meets all functional requirements.",
+      "To test individual units or components of the application for expected functionality.",
+      "To test the entire application as a whole.",
+      "To validate the application's performance under load."
+    ],
+    "Explanation": "Unit testing focuses on testing individual units or components of an application in isolation to verify they function correctly. Unlike integration or end-to-end testing, unit tests verify small, discrete pieces of functionality, making it easier to identify and fix bugs early in the development process.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 66,
+    "QuestionText": "When using the AWS SDK, what type of exception is typically raised when there's an error on your side, such as an invalid parameter or network issues?",
+    "Options": [
+      "Server-side exception",
+      "HTTP error code",
+      "Service-specific exception",
+      "Client-side exception"
+    ],
+    "Explanation": "Client-side exceptions in the AWS SDK occur when there's an error on the client side, such as invalid parameters, network connectivity issues, or authentication problems. These are different from server-side exceptions, which occur when AWS services return error responses. The SDK provides specific exception types to help developers handle these different error scenarios.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 67,
+    "QuestionText": "Which AWS service can you use to trigger actions and automate responses based on events and changes in your AWS resources?",
+    "Options": [
+      "AWS CloudWatch",
+      "AWS CloudTrail",
+      "AWS Lambda",
+      "AWS SNS (Simple Notification Service)"
+    ],
+    "Explanation": "AWS Lambda is an event-driven compute service that can automatically trigger actions in response to events from over 200 AWS services and SaaS applications. Lambda functions can respond to changes in S3 buckets, DynamoDB tables, API Gateway requests, CloudWatch alarms, and many other event sources, enabling automated responses and workflows.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 68,
+    "QuestionText": "What is the key benefit of using AWS CloudWatch Logs in a cloud-based infrastructure?",
+    "Options": [
+      "Creating and managing AWS resources.",
+      "Storing and analyzing log data generated by AWS services.",
+      "Real-time monitoring of AWS resources.",
+      "Automating the deployment of AWS services."
+    ],
+    "Explanation": "AWS CloudWatch Logs provides a centralized service for collecting, storing, and analyzing log data from AWS resources and applications. It enables you to aggregate logs from EC2 instances, Lambda functions, and other services, making it easier to search, filter, and analyze log data for troubleshooting, monitoring, and compliance purposes.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 69,
+    "QuestionText": "What is the primary purpose of AWS CloudTrail?",
+    "Options": [
+      "To automatically manage serverless functions in AWS Lambda.",
+      "To monitor and log changes to your AWS account.",
+      "To provide detailed logs of API calls made within your Lambda functions.",
+      "To track the usage of EC2 instances in your AWS environment."
+    ],
+    "Explanation": "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. It continuously monitors and logs API calls made on your account, providing a history of who did what, when, and from where, which is essential for security auditing and compliance.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 70,
+    "QuestionText": "What is the primary purpose of AWS X-Ray in a distributed application?",
+    "Options": [
+      "To generate audit trails of actions in your AWS account.",
+      "To provide detailed logs of API gateway interactions.",
+      "To automatically manage serverless functions in AWS Lambda.",
+      "To instrument your code and create Service Maps for analyzing performance and troubleshooting issues."
+    ],
+    "Explanation": "AWS X-Ray helps developers analyze and debug distributed applications by providing insights into request flows, service dependencies, and performance bottlenecks. It instruments your application code to create service maps showing how requests flow through your application, making it easier to identify and troubleshoot issues in microservices architectures.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 71,
+    "QuestionText": "What is the key benefit of AWS Glue Data Catalog when used with AWS Athena?",
+    "Options": [
+      "Simplified table management and schema versioning.",
+      "Data storage in Amazon S3.",
+      "High-performance analytics on large datasets.",
+      "Real-time data processing."
+    ],
+    "Explanation": "AWS Glue Data Catalog is a centralized metadata repository that stores table definitions and schema information. When used with Amazon Athena, it simplifies table management by providing a unified catalog of data sources, enabling schema versioning, and allowing you to query data across multiple sources without manually defining schemas for each query.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 72,
+    "QuestionText": "What is AWS Athena primarily used for?",
+    "Options": [
+      "Performing high-performance analytics on large datasets in Redshift.",
+      "Analyzing data stored in Amazon S3 using SQL queries.",
+      "Running serverless functions in AWS Lambda.",
+      "Extracting, transforming, and loading data in AWS Glue."
+    ],
+    "Explanation": "Amazon Athena is an interactive query service that enables you to analyze data directly in Amazon S3 using standard SQL. It's serverless, so there's no infrastructure to manage, and you pay only for the queries you run. Athena works with various data formats stored in S3, making it ideal for ad-hoc analysis and business intelligence.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 73,
+    "QuestionText": "Which AWS service is used to create time series data?",
+    "Options": [
+      "Amazon S3",
+      "Amazon Kinesis Data Analytics",
+      "Amazon Redshift",
+      "AWS Glue"
+    ],
+    "Explanation": "Amazon Kinesis Data Analytics is a service for processing and analyzing streaming data in real-time using SQL. It can transform streaming data into time series data, perform aggregations, and create analytics applications that process data continuously as it arrives, rather than in batches.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      1
+    ]
+  },
+  {
+    "Id": 74,
+    "QuestionText": "What is the primary use case for Amazon Kinesis Data Analytics?",
+    "Options": [
+      "Real-time processing and analysis of streaming data.",
+      "Batch processing of historical data.",
+      "Long-term data storage and archiving.",
+      "Machine learning model training."
+    ],
+    "Explanation": "Amazon Kinesis Data Analytics is designed for real-time processing and analysis of streaming data. It enables you to run SQL queries on streaming data sources like Kinesis Data Streams, perform real-time aggregations, create time-series analytics, and build streaming analytics applications that process data as it arrives.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 75,
+    "QuestionText": "Which AWS service is specifically designed for high-performance analytics on large datasets, offers data warehousing capabilities, and supports complex queries and reporting?",
+    "Options": [
+      "Amazon Redshift",
+      "Amazon Glue",
+      "Amazon Athena",
+      "Amazon S3"
+    ],
+    "Explanation": "Amazon Redshift is a fully managed, petabyte-scale data warehouse service designed for high-performance analytics on large datasets. It offers columnar storage, parallel query execution, and supports complex queries and reporting. Redshift is optimized for online analytical processing (OLAP) workloads and business intelligence applications.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 76,
+    "QuestionText": "What is the minimum passing score required to achieve the AWS Developer Associate certification?",
+    "Options": [
+      "500 out of 1000",
+      "600 out of 1000",
+      "720 out of 1000",
+      "800 out of 1000"
+    ],
+    "Explanation": "The AWS Certified Developer - Associate exam requires a minimum passing score of 720 out of 1000 points, which represents 72% accuracy. Scores are scaled from 100 to 1000, and candidates must achieve at least 720 to pass the certification exam.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 77,
+    "QuestionText": "Which AWS service is specifically designed for managing and storing Docker container images?",
+    "Options": [
+      "AWS Fargate",
+      "AWS Elastic Beanstalk",
+      "Amazon ECS",
+      "Amazon ECR"
+    ],
+    "Explanation": "Amazon Elastic Container Registry (ECR) is a fully managed Docker container registry that makes it easy to store, manage, and deploy Docker container images. ECR is integrated with Amazon ECS and Amazon EKS for seamless container orchestration, providing secure, scalable storage for container images.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      3
+    ]
+  },
+  {
+    "Id": 78,
+    "QuestionText": "Which AWS service provides serverless compute capabilities and allows users to run code without managing the underlying infrastructure?",
+    "Options": [
+      "AWS Lambda",
+      "Amazon RDS",
+      "Amazon EC2",
+      "Amazon S3"
+    ],
+    "Explanation": "AWS Lambda is a serverless compute service that allows you to run code without provisioning or managing servers. You simply upload your code, and Lambda automatically handles all the infrastructure management, scaling, and high availability. You pay only for the compute time you consume, with no charges when your code isn't running.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      0
+    ]
+  },
+  {
+    "Id": 79,
+    "QuestionText": "What is the time limit for completing the AWS Developer Associate certification exam, which includes 65 questions?",
+    "Options": [
+      "150 minutes",
+      "120 minutes",
+      "130 minutes",
+      "90 minutes"
+    ],
+    "Explanation": "The AWS Certified Developer - Associate (DVA-C02) exam consists of 65 questions and has a time limit of 130 minutes. This provides approximately 2 minutes per question, allowing candidates adequate time to read, understand, and answer each question thoroughly.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 80,
+    "QuestionText": "Which AWS service provides a serverless compute environment for running code in response to events and automatically manages the compute resources required?",
+    "Options": [
+      "Amazon EC2",
+      "Amazon ECS",
+      "AWS Lambda",
+      "AWS Elastic Beanstalk"
+    ],
+    "Explanation": "AWS Lambda is an event-driven, serverless compute service that automatically manages the compute resources required to run your code. It responds to events from over 200 AWS services and automatically scales from a few requests per day to thousands per second, handling all the infrastructure management for you.",
+    "Tags": [
+      "Justin Researched"
+    ],
+    "CorrectAnswers": [
+      2
+    ]
+  },
+  {
+    "Id": 81,
+    "QuestionText": "A company developed a warehouse fulfillment application by using AWS Step Functions. The Step Functions activity workers run on tablets that warehouse employees use. Some long-running activities fail because of problems with individual tablets. These problems include loss of battery power. The application must re-assign interrupted activities to another worker as soon as possible. If an activity fails three times, the state machine should fail.  Which Step Functions configuration will meet these requirements?",
+    "Options": [
+      "Set the state machine's States.Timeout attribute to 30 seconds. Set the state machine's Retry.MaxAttempts attribute to 3.",
+      "Set the task's HeartbeatSeconds attribute to 30. Set the state machine's States.TaskFailed attribute to 3.",
+      "Set the task's TimeoutSeconds attribute to 30. Set the Retry.MaxAttempts attribute to 3.",
+      "Set the task's HeartbeatSeconds attribute to 30 seconds. Set the Retry.MaxAttempts attribute to 3."
+    ],
+    "CorrectAnswers": [
+      3
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 82,
+    "QuestionText": "A developer needs to query a relational database from an AWS Lambda function. The Lambda function will be called frequently. The developer needs to avoid the latency introduced by the initial JDBC connection to the database in subsequent invocations of the Lambda function. How can the developer ensure the database connection is reused by Lambda?",
+    "Options": [
+      "Initialize the database connection outside the Lambda function code as a Lambda function environment variable.",
+      "Initialize the database connection within the Lambda function code but outside the handler method.",
+      "Store the database connection string in AWS Systems Manager Parameter Store. Ensure the Lambda function handler initializes the database connection within the handler method.",
+      "Store the database connection string in the Lambda function code. Ensure the function handler initializes the database connection within the handler method."
+    ],
+    "CorrectAnswers": [
+      1
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 83,
+    "QuestionText": "A developer built an application that stores data in an Amazon RDS Multi-AZ DB instance. The database performs reads and writes constantly and is responding slowly. The intensive read requests are received unpredictably several times each hour. The application cannot tolerate reading stale data. The developer must increase the retrieval speed for the intensive read requests.  Which strategy will meet these requirements?",
+    "Options": [
+      "Use an Amazon ElastiCache cluster with a write-through strategy. Configure the application to direct the intensive read operations to ElastiCache.",
+      "Use an Amazon DynamoDB Accelerator (DAX) cluster with a write-through strategy. Configure the application to direct the intensive read operations to the DAX cluster.",
+      "Configure the application to direct the intensive read operations to the Multi-AZ standby replica in the second Availability Zone.",
+      "Add an RDS read replica. Configure the application to direct the intensive read operations to the read replica."
+    ],
+    "CorrectAnswers": [
+      0
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 84,
+    "QuestionText": "A company has an inventory system that receives sporadic inventory updates from a fulfillment system in the form of large JSON files. While many files can be sent in a short time period, days can pass when no files are sent. The company wants to process these files as soon as they arrive. Which solution will meet these requirements?",
+    "Options": [
+      "Send the JSON files to Amazon Elastic File System (Amazon EFS). Configure an AWS Lambda function with an Amazon EFS event source to process the files.",
+      "Send the JSON files to Amazon Elastic File System (Amazon EFS). Schedule an AWS Lambda function to process the files once each hour.",
+      "Send the JSON files to an Amazon S3 bucket. Configure an AWS Lambda function with an S3 event source to process the S3 objects.",
+      "Send the JSON files to an Amazon S3 bucket. Schedule an AWS Lambda function to process the S3 objects once each hour."
+    ],
+    "CorrectAnswers": [
+      2
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 85,
+    "QuestionText": "A company is developing a Python application that submits data to an Amazon DynamoDB table. The company requires client-side encryption of specific data items and end-to-end protection for the encrypted data in transit and at rest.  Which combination of steps will meet the requirement to encrypt specific data items? (Select TWO.)",
+    "Options": [
+      "Generate symmetric encryption keys with AWS Key Management Service (AWS KMS).",
+      "Generate asymmetric encryption keys with AWS Key Management Service (AWS KMS).",
+      "Use generated keys with the AWS Database Encryption SDK.",
+      "Use generated keys to configure DynamoDB table encryption with AWS managed KMS keys.",
+      "Use generated keys to configure DynamoDB table encryption with AWS owned KMS keys."
+    ],
+    "CorrectAnswers": [
+      0,
+      2
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official",
+      "Multiple Correct Answers"
+    ]
+  },
+  {
+    "Id": 86,
+    "QuestionText": "A developer writes an AWS Lambda function in Java that calls a third-party API by using an API key. The developer must keep the API key encrypted and secure from casual observation. The API key can change over time.  How can the developer meet these requirements in the MOST operationally efficient manner?",
+    "Options": [
+      "Store the API key directly in the Lambda function's program code.",
+      "Store the API key in a file on an Amazon Elastic Block Store (Amazon EBS) volume. Include code to read the file when the Lambda function starts.",
+      "Store the API key in a property file that is deployed with the Java archive. Include code to read the property file when the Lambda function starts.",
+      "Store the API key as a secure string in the AWS Systems Manager Parameter Store. Include code to read the parameter when the Lambda function starts."
+    ],
+    "CorrectAnswers": [
+      3
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 87,
+    "QuestionText": "A company notices performance degradation in one of its production web applications. The application is running on AWS services and uses a microservices architecture. The company suspects that one of these microservices is causing the performance issue.  Which AWS solution should the company use to identify the service that is contributing to higher application latency?",
+    "Options": [
+      "AWS X-Ray service map",
+      "AWS CloudTrail event history",
+      "Amazon EventBridge events",
+      "AWS Trusted Advisor performance report"
+    ],
+    "CorrectAnswers": [
+      0
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 88,
+    "QuestionText": "Each time a developer publishes a new version of an AWS Lambda function, all the dependent event source mappings need to be updated with the reference to the new version’s Amazon Resource Name (ARN). These updates are time consuming and error-prone.  Which combination of actions should the developer take to avoid performing these updates when publishing a new Lambda version? (Select TWO.)",
+    "Options": [
+      "Update event source mappings with the ARN of the Lambda layer.",
+      "Point a Lambda alias to a new version of the Lambda function.",
+      "Create a Lambda alias for each published version of the Lambda function.",
+      "Point a Lambda alias to a new Lambda function alias.",
+      "Update the event source mappings with the Lambda alias ARN."
+    ],
+    "CorrectAnswers": [
+      1,
+      4
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official",
+      "Multiple Correct Answers"
+    ]
+  },
+  {
+    "Id": 89,
+    "QuestionText": "A developer builds an application that uses the AWS SDK for Python (Boto3) to query an Amazon DynamoDB table. When the application is tested on an Amazon EC2 instance, the application returns this error message: `An error occurred (AccessDenied) when calling the operation` The EC2 instance is associated with an existing IAM role named myRole. Which set of actions would resolve this error?",
+    "Options": [
+      "Create a new IAM role with the necessary Amazon DynamoDB permissions. Attach this IAM role as an additional role on the EC2 instance.",
+      "Create a new IAM policy with the necessary Amazon DynamoDB permissions. Attach this policy to the myRole IAM role.",
+      "Run the aws sts assume-role command by using the myRole Amazon Resource Name (ARN). Obtain the access key ID and the secret access key from the output. Run the aws configure command to store these values on the EC2 instance.",
+      "Query http://169.254.169.254/latest/meta-data/iam/security-credentials/myRole to obtain the access key ID and the secret access key. Run the aws configure command to store these values on the EC2 instance."
+    ],
+    "CorrectAnswers": [
+      1
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 90,
+    "QuestionText": "An ecommerce company deploys more than 20 services behind Amazon API Gateway. The interaction between services is complex. Each service can potentially call several others, making performance issues and errors difficult to identify. Some individual API calls have experienced slow response times. The development team needs to quickly identify the underlying causes of the slowdowns. Which approach would MOST quickly identify the underlying cause of performance issues?",
+    "Options": [
+      "Use Amazon CloudWatch metrics to find the service invocations with slow response times. Configure and use AWS X-Ray to examine these services to discover their performance issues.",
+      "Use AWS CloudWatch Logs to find the service invocations with slow response times. Use AWS CloudTrail to examine these services to discover their performance issues.",
+      "Configure and use AWS X-Ray to find the service invocations with slow response times. Use Amazon CloudWatch metrics and logs to examine these services to discover their performance issues.",
+      "Use AWS CloudTrail to find the service invocations with slow response times. Configure and use AWS X-Ray to examine these services to discover their performance issues."
+    ],
+    "CorrectAnswers": [
+      2
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 91,
+    "QuestionText": "A company is working on a project to enhance its serverless application development process. The company hosts applications on AWS Lambda. The development team regularly updates the Lambda code and wants to use stable code in production. Which combination of steps should the development team take to configure Lambda functions to meet both development and production requirements? (Select TWO.)",
+    "Options": [
+      "Create a new Lambda layer every time a new code release needs testing.",
+      "Create a new Lambda version every time a new code release needs testing.",
+      "Create two Lambda function aliases. Name one as Production and the other as Development. Point the Production alias to a production-ready Lambda layer Amazon Resource Name (ARN). Point the Development alias to the $LATEST layer ARN.",
+      "Create two Lambda function aliases. Name one as Production and the other as Development. Point the Production alias to a production-ready qualified Amazon Resource Name (ARN) version. Point the Development alias to the $LATEST version.",
+      "Create two Lambda function aliases. Name one as Production and the other as Development. Point the Production alias to the production-ready unqualified Amazon Resource Name (ARN) version. Point the Development alias to the variable LAMBDA_TASK_ROOT."
+    ],
+    "CorrectAnswers": [
+      1,
+      3
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official",
+      "Multiple Correct Answers"
+    ]
+  },
+  {
+    "Id": 92,
+    "QuestionText": "A developer tests code running on the developer's laptop. The code is using the AWS SDK for Python (Boto3) to access AWS services. The .aws/credentials file is set up with the user's IAM user name and password. The developer runs the code and receives this error message: An error occurred (InvalidAccessKeyId)  Which action will resolve this error?",
+    "Options": [
+      "Move the IAM user name and password to the .aws/config file.",
+      "Move the user name and password to environment variables.",
+      "Replace the IAM user name and password with an access key ID and a secret access key.",
+      "Replace the IAM user name and password with an access key ID and a secret access key."
+    ],
+    "CorrectAnswers": [
+      3
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 93,
+    "QuestionText": "A company hosts its web application backend on Amazon Elastic Container Service (Amazon ECS). The application's Amazon ECS tasks run behind an Application Load Balancer (ALB). The application supports three environments: production, testing, and development. The application uses the ALB to route traffic to the correct environment. The company has configured three listener rules for the ALB to forward traffic to a different target group based on the port number (Port 80 for production target group, Port 8080 for testing target group, and Port 8081 for development target group). The company decides to migrate the application backend to a serverless architecture by using an Amazon API Gateway API backed by AWS Lambda functions. The company plans to use the URI path pattern to access the desired environment instead of the port number. The company has created the Lambda functions for the application backend. Each Lambda function has three aliases (production, testing, and development).  Which option includes the next steps the company must take to complete the process?",
+    "Options": [
+      "Create an API Gateway API and configure the routes to use Lambda proxy integration. Target the corresponding Lambda function Amazon Resource Name (ARN) that is concatenated with the expression ${stageVariables.LambdaAlias}. Modify the Lambda resource-based policy by adding the permission lambda:InvokeFunction. Create production, testing, and development stages. Add the LambdaAlias stage variable to the corresponding stage.",
+      "Create an API Gateway API and configure the routes to use Lambda proxy integration. Target the corresponding Lambda function Amazon Resource Name (ARN) that is concatenated with the name of the Lambda alias. Modify the Lambda resource-based policy by adding the permission lambda:InvokeFunction. Create production, testing, and development stages. Add the LambdaAlias stage variable to the corresponding stage.",
+      "Create an API Gateway API and configure the routes to use Lambda proxy integration. Target the corresponding Lambda function Amazon Resource Name (ARN) that is concatenated with the expression ${stageVariables.LambdaAlias}. Modify the Lambda execution role by adding the permission apigateway:*. Create production, testing, and development stages. Add the LambdaAlias stage variable to the corresponding stage.",
+      "Create an API Gateway API and configure the routes to use Lambda proxy integration. Target the corresponding Lambda function Amazon Resource Name (ARN) that is concatenated with the expression ${stageVariables.LambdaAlias}. Modify the Lambda execution role by adding the permission apigateway:*. Create production, testing, and development stages. Add the LambdaAlias stage variable to the corresponding stage."
+    ],
+    "CorrectAnswers": [
+      0
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 94,
+    "QuestionText": "A developer migrates a web application from an on-premises data center to the AWS Cloud. Authenticated customers use the application from many different clients simultaneously, including laptops, smartphones, and tablets. The application runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group. Upon initial testing, users report that when switching devices, activity from their previous sessions is not saved.  Which solution will make the session state information persist across devices?",
+    "Options": [
+      "Implement sticky sessions at the Application Load Balancer.",
+      "Store session state information in an Amazon ElastiCache for Redis cluster.",
+      "Implement session state information storage in a local file on the webserver.",
+      "Store session state information in AWS Systems Manager State Manager."
+    ],
+    "CorrectAnswers": [
+      1
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 95,
+    "QuestionText": "A company uses an AWS Lambda function to call a third-party REST endpoint. Personally identifiable information (PII) is exposed upon a successful request. The third party that manages the REST endpoint requires the company to change the API key that the company uses to invoke the endpoint every 4 months. The company retrieves the API key by calling an endpoint that the third party owns. The endpoint uses basic authentication (username and password). The new API key is available and active one month prior to the inactivation of the old API key. When the company retrieves the new API key, the company needs to store the key for use in future invocations of the REST endpoint. The company needs a secure solution that eliminates downtime while the company sets up the new API key. Which solution will meet these requirements?",
+    "Options": [
+      "Store the API key in Parameter Store, a capability of AWS Systems Manager, as a SecureString. Configure rotation to obtain the new API key from the third party and to update the parameter value.",
+      "Store the API key in AWS Secrets Manager. Create a Lambda function to obtain the new API key from the third party. Configure rotation in Secrets Manager to use the Lambda function to obtain a new API key. Store the new API key in Secrets Manager. Configure rotation to occur every 4 months.",
+      "Store the API key in an Amazon DynamoDB table. Create a Lambda function to retrieve the new API key from the third party and to update the value in DynamoDB. Use an Amazon EventBridge scheduled rule to invoke the Lambda function every 4 months.",
+      "Store the API key as a Lambda environment variable. Retrieve the new API key from the third party by using open source software. Manually update the Lambda environment variable."
+    ],
+    "CorrectAnswers": [
+      1
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 96,
+    "QuestionText": "A developer configures AWS CodeDeploy to install an application on Amazon EC2 instances in an Amazon EC2 Auto Scaling group. Where should the developer place the appspec.yml file?",
+    "Options": [
+      "In the root of the directory structure of the application's source code",
+      "Directly into the CodeDeploy console",
+      "In the .ebextensions folder in the application's source code",
+      "In the same Amazon S3 bucket as the application source code bundle"
+    ],
+    "CorrectAnswers": [
+      0
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 97,
+    "QuestionText": "A developer wants to monitor invocations of an AWS Lambda function by using Amazon CloudWatch Logs. The developer added a number of print statements to the function code that write the logging information to the stdout stream. After running the function, the developer does not see any log data being generated. Why does the log data NOT appear in the CloudWatch logs?",
+    "Options": [
+      "The log data is not written to the stderr stream.",
+      "Lambda function logging is not automatically enabled.",
+      "The execution role for the Lambda function did not grant permissions to write log data to CloudWatch Logs.",
+      "The Lambda function outputs the logs to an Amazon S3 bucket."
+    ],
+    "CorrectAnswers": [
+      2
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 98,
+    "QuestionText": "A developer has written several custom applications that read and write to the same Amazon DynamoDB table. Each time the data in the DynamoDB table is modified, this change should be sent to an external API. Which combination of steps should the developer perform to accomplish this task? (Select TWO.)",
+    "Options": [
+      "Enable DynamoDB Streams on the table.",
+      "Configure an event in Amazon EventBridge that publishes the change to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) data stream.",
+      "Create a trigger in the DynamoDB table to publish the change to an Amazon Kinesis data stream.",
+      "Deliver the stream to an Amazon Simple Notification Service (Amazon SNS) topic and subscribe the API to the topic.",
+      "Configure an AWS Lambda function to be triggered by the DynamoDB stream and call the external API."
+    ],
+    "CorrectAnswers": [
+      0,
+      4
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official",
+      "Multiple Correct Answers"
+    ]
+  },
+  {
+    "Id": 99,
+    "QuestionText": "A company is developing an image processing application. When an image is uploaded to an Amazon S3 bucket, a number of independent and separate services must be invoked to process the image. The services do not have to be available immediately, but they must process every image. Which application design satisfies these requirements?",
+    "Options": [
+      "Configure an Amazon S3 event notification that publishes to an Amazon SQS queue. Each service pulls the message from the same queue.",
+      "Configure an Amazon S3 event notification that publishes to an Amazon SNS topic. Each service subscribes to the same topic.",
+      "Configure an Amazon S3 event notification that publishes to an Amazon SQS queue. Subscribe a separate Amazon SNS topic for each service to an Amazon SQS queue.",
+      "Configure an Amazon S3 event notification that publishes to an Amazon SNS topic. Subscribe a separate Amazon SQS queue for each service to the Amazon SNS topic."
+    ],
+    "CorrectAnswers": [
+      3
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  },
+  {
+    "Id": 100,
+    "QuestionText": "A developer builds an inventory application that runs on employee tablets. The tablet application serves as an activity worker for an AWS Step Functions state machine. The application must retrieve a scheduled task, periodically report on task progress, and report task completion or task failure. Which Step Functions API actions does the tablet application need to make",
+    "Options": [
+      "StartExecution, GetActivityTask, SendTaskHeartbeat, StopExecution",
+      "CreateActivity, SendTaskHeartbeat, SendTaskFailure, SendTaskSuccess",
+      "CreateActivity, SendTaskHeartbeat, DeleteActivity",
+      "CreateActivity, GetActivityTask, SendTaskHeartbeat, SendTaskFailure, SendTaskSuccess"
+    ],
+    "CorrectAnswers": [
+      3
+    ],
+    "Explanation": "",
+    "Tags": [
+      "AWS Official"
+    ]
+  }
+]
