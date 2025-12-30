@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.CommandLine;
 using Newtonsoft.Json;
 
-namespace AwsCertPractice
+namespace AwsExamSimulator
 {
     class Program
     {
@@ -179,15 +179,21 @@ namespace AwsCertPractice
             for (int i = 0; i < selectedQuestions.Count; i++)
             {
                 Question q = selectedQuestions[i];
+                Console.Clear();
                 Console.WriteLine($"\nQuestion {i + 1} of {selectedQuestions.Count}");
                 Console.WriteLine(new string('=', 50));
-                Console.WriteLine(q.QuestionText);
+                Console.WriteLine();
+                WriteWrappedText(q.QuestionText, "   ");
                 Console.WriteLine();
 
                 // Display options
                 for (int j = 0; j < q.Options.Count; j++)
                 {
-                    Console.WriteLine($"{j + 1}. {q.Options[j]}");
+                    WriteWrappedText($"{j + 1}. {q.Options[j]}", "   ");
+                    if (j < q.Options.Count - 1)
+                    {
+                        Console.WriteLine();
+                    }
                 }
 
                 // Check if question requires multiple answers
@@ -304,6 +310,30 @@ namespace AwsCertPractice
             return string.Join(", ", answerNumbers);
         }
 
+        static void WriteWrappedText(string text, string indent, int maxLineWidth = 70)
+        {
+            string[] words = text.Split(' ');
+            string currentLine = indent;
+            
+            foreach (string word in words)
+            {
+                if ((currentLine + word).Length > maxLineWidth && currentLine != indent)
+                {
+                    Console.WriteLine(currentLine.TrimEnd());
+                    currentLine = indent + word + " ";
+                }
+                else
+                {
+                    currentLine += word + " ";
+                }
+            }
+            
+            if (currentLine != indent)
+            {
+                Console.WriteLine(currentLine.TrimEnd());
+            }
+        }
+
         static void ShowResults()
         {
             Console.WriteLine("\n" + new string('=', 50));
@@ -328,8 +358,21 @@ namespace AwsCertPractice
                 for (int i = 0; i < incorrectQuestions.Count; i++)
                 {
                     var (q, userAnswers) = incorrectQuestions[i];
-                    Console.WriteLine($"\n{i + 1}. Question ID: {q.Id}");
-                    Console.WriteLine($"   {q.QuestionText}");
+                    Console.WriteLine($"\nQuestion ID: {q.Id}");
+                    Console.WriteLine();
+                    WriteWrappedText(q.QuestionText, "   ");
+                    Console.WriteLine();
+                    
+                    // Display all options
+                    for (int j = 0; j < q.Options.Count; j++)
+                    {
+                        WriteWrappedText($"{j + 1}. {q.Options[j]}", "   ");
+                        if (j < q.Options.Count - 1)
+                        {
+                            Console.WriteLine();
+                        }
+                    }
+                    Console.WriteLine();
                     
                     // Show user's submitted answer(s)
                     if (userAnswers.Count > 0)
@@ -366,7 +409,15 @@ namespace AwsCertPractice
                     // Show explanation
                     if (!string.IsNullOrWhiteSpace(q.Explanation))
                     {
-                        Console.WriteLine($"   Explanation: {q.Explanation}");
+                        Console.WriteLine();
+                        WriteWrappedText($"Explanation: {q.Explanation}", "   ");
+                    }
+                    
+                    // Add two blank lines between questions (except after the last one)
+                    if (i < incorrectQuestions.Count - 1)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine();
                     }
                 }
                 

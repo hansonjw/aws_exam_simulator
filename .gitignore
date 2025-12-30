@@ -58,6 +58,14 @@ __pycache__/
 *.temp
 *~
 
+# Question files
+questions_merged.json
+questions_aws_converted.json
+questions_lots.json
+questions_justin.json
+questions_.json
+questions_*.json
+
 # NuGet packages (optional - usually you want to commit packages.config or project files that reference packages)
 # *.nupkg
 # packages/

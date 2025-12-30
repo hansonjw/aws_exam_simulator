@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace AwsCertPractice
+namespace AwsExamSimulator
 {
     public class Question
     {
