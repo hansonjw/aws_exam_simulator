@@ -1560,7 +1560,7 @@
     "Options": [
       "Move the IAM user name and password to the .aws/config file.",
       "Move the user name and password to environment variables.",
-      "Replace the IAM user name and password with an access key ID and a secret access key.",
+      "Move IAM user name and password to AWS KMS",
       "Replace the IAM user name and password with an access key ID and a secret access key."
     ],
     "CorrectAnswers": [

@@ -218,9 +218,15 @@ namespace AwsExamSimulator
 
                 if (string.IsNullOrWhiteSpace(answerInput))
                 {
-                    Console.WriteLine("\nInvalid answer.");
-                    Console.WriteLine($"The correct answer(s) are: {GetCorrectAnswersDisplay(q)}");
-                    Console.WriteLine($"\nExplanation: {q.Explanation}");
+                    Console.WriteLine("\n   Invalid answer.");
+                    if (q.CorrectAnswers.Count > 1)
+                    {
+                        Console.WriteLine($"   Correct Answers: {GetCorrectAnswersDisplay(q)}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"   Correct Answer: {GetCorrectAnswersDisplay(q)}");
+                    }
                     incorrectQuestions.Add((q, new List<int>()));
                 }
                 else if (requiresMultiple)
@@ -249,20 +255,20 @@ namespace AwsExamSimulator
                         var correctAnswersSet = new HashSet<int>(q.CorrectAnswers);
                         if (userAnswers.SetEquals(correctAnswersSet))
                         {
-                            Console.WriteLine("\n✓ Correct!");
+                            Console.WriteLine("\n   ✓ Correct!");
                             correctAnswers++;
                         }
                         else
                         {
-                            Console.WriteLine("\n✗ Incorrect.");
-                            Console.WriteLine($"The correct answers are: {GetCorrectAnswersDisplay(q)}");
+                            Console.WriteLine("\n   ✗ Incorrect.");
+                            Console.WriteLine($"   Correct Answers: {GetCorrectAnswersDisplay(q)}");
                             incorrectQuestions.Add((q, userAnswers.ToList()));
                         }
                     }
                     else
                     {
-                        Console.WriteLine($"\nInvalid input. Please enter exactly {requiredCount} valid answers separated by commas.");
-                        Console.WriteLine($"The correct answers are: {GetCorrectAnswersDisplay(q)}");
+                        Console.WriteLine($"\n   Invalid input. Please enter exactly {requiredCount} valid answers separated by commas.");
+                        Console.WriteLine($"   Correct Answers: {GetCorrectAnswersDisplay(q)}");
                         incorrectQuestions.Add((q, userAnswers.ToList()));
                     }
                 }
@@ -275,26 +281,30 @@ namespace AwsExamSimulator
                         
                         if (q.CorrectAnswers.Contains(answerIndex))
                         {
-                            Console.WriteLine("\n✓ Correct!");
+                            Console.WriteLine("\n   ✓ Correct!");
                             correctAnswers++;
                         }
                         else
                         {
-                            Console.WriteLine("\n✗ Incorrect.");
-                            Console.WriteLine($"The correct answer is: {GetCorrectAnswersDisplay(q)}");
+                            Console.WriteLine("\n   ✗ Incorrect.");
+                            Console.WriteLine($"   Correct Answer: {GetCorrectAnswersDisplay(q)}");
                             incorrectQuestions.Add((q, new List<int> { answerIndex }));
                         }
                     }
                     else
                     {
-                        Console.WriteLine("\nInvalid answer.");
-                        Console.WriteLine($"The correct answer is: {GetCorrectAnswersDisplay(q)}");
-                        Console.WriteLine($"\nExplanation: {q.Explanation}");
+                        Console.WriteLine("\n   Invalid answer.");
+                        Console.WriteLine($"   Correct Answer: {GetCorrectAnswersDisplay(q)}");
                         incorrectQuestions.Add((q, new List<int>()));
                     }
                 }
 
-                Console.WriteLine($"\nExplanation: {q.Explanation}");
+                // Show explanation
+                if (!string.IsNullOrWhiteSpace(q.Explanation))
+                {
+                    Console.WriteLine();
+                    WriteWrappedText($"Explanation: {q.Explanation}", "   ");
+                }
 
                 Console.WriteLine("\nPress Enter to continue...");
                 Console.ReadLine();
