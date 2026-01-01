@@ -1370,7 +1370,7 @@
     "CorrectAnswers": [
       3
     ],
-    "Explanation": "",
+    "Explanation": "AWS Step Functions activities allow external workers (e.g., on tablets) to perform long-running tasks. To detect tablet issues like battery loss quickly, configure HeartbeatSeconds in the task state—this requires workers to call SendTaskHeartbeat periodically; missing heartbeats timeout the task, allowing reassignment. For failures (including heartbeat timeouts), the Retry field with MaxAttempts (e.g., 3) retries the task automatically before failing the execution. Why not first option? TimeoutSeconds is overall task duration; too short would fail legitimate long tasks.  Why not second option? No 'States.TaskFailed' attribute exists.  Why not third option? TimeoutSeconds doesn't detect partial failures/progress.",
     "Tags": [
       "AWS Official"
     ]
@@ -1387,7 +1387,7 @@
     "CorrectAnswers": [
       1
     ],
-    "Explanation": "",
+    "Explanation": "Lambda execution environments reuse containers across invocations. Initializing connections (e.g., JDBC) outside the handler (global scope) allows reuse, avoiding cold-start latency from new connections each time.",
     "Tags": [
       "AWS Official"
     ]
@@ -1404,7 +1404,7 @@
     "CorrectAnswers": [
       0
     ],
-    "Explanation": "",
+    "Explanation": "For RDS with constant writes and unpredictable intensive reads, ElastiCache (e.g., Redis) as a cache layer with write-through strategy ensures writes update both the cache and RDS simultaneously, so cached reads are always fresh (no staleness) and extremely fast/low-latency. This offloads reads without any replication lag risk, meeting the 'cannot tolerate stale data' requirement.",
     "Tags": [
       "AWS Official"
     ]
@@ -1421,7 +1421,7 @@
     "CorrectAnswers": [
       2
     ],
-    "Explanation": "",
+    "Explanation": "Amazon S3 event notifications can directly trigger a Lambda function asynchronously whenever a new object (e.g., JSON file) is created in the bucket. This ensures processing starts as soon as files arrive, even during bursts or long idle periods, with no polling or delays. Why not first and second options? Amazon EFS does not support native event notifications to trigger Lambda on file creation/modification; it's a mounted file system, not event-driven like S3. Why not fourth option? Scheduling Lambda hourly introduces potential delays (up to ~1 hour) for newly arrived files, violating the 'as soon as they arrive' requirement.",
     "Tags": [
       "AWS Official"
     ]
@@ -1440,7 +1440,7 @@
       0,
       2
     ],
-    "Explanation": "",
+    "Explanation": "To achieve client-side encryption of specific items (not the whole table) with end-to-end protection (encrypted in transit and at rest), the application must encrypt data before sending it to DynamoDB and decrypt after retrieval. The recommended AWS approach is: Use AWS KMS to generate and manage symmetric Customer Master Keys (CMKs). Use the AWS Database Encryption SDK (or broader AWS Encryption SDK) with those KMS keys to perform the actual encryption/decryption in your application code. This ensures only encrypted data ever reaches DynamoDB, and keys never leave KMS. Why not second option? Asymmetric keys are not typically used for bulk data encryption in this scenario; symmetric keys provide better performance. Why not options four and five? Configuring DynamoDB table encryption (AWS-managed or AWS-owned keys) provides server-side encryption at rest only—data is encrypted after DynamoDB receives it (not end-to-end) and does not allow selective item-level client-side control.",
     "Tags": [
       "AWS Official",
       "Multiple Correct Answers"
@@ -1458,7 +1458,7 @@
     "CorrectAnswers": [
       3
     ],
-    "Explanation": "",
+    "Explanation": "The most operationally efficient and secure approach is to store the API key as a SecureString parameter in AWS Systems Manager Parameter Store, which automatically encrypts the value at rest using AWS KMS and allows easy updates without redeploying the Lambda function code. The Lambda execution role grants permission to retrieve the parameter, and the function code fetches it at initialization (outside the handler for reuse), ensuring the key remains protected from casual observation.",
     "Tags": [
       "AWS Official"
     ]
@@ -1475,7 +1475,7 @@
     "CorrectAnswers": [
       0
     ],
-    "Explanation": "",
+    "Explanation": "AWS X-Ray provides distributed tracing that helps analyze and debug microservices applications by generating a service map that visually shows requests flowing through each service, along with latency, errors, and response times for individual segments. This enables developers to quickly pinpoint the specific microservice contributing to higher latency in a complex, multi-service interaction without relying on logs or metrics alone.",
     "Tags": [
       "AWS Official"
     ]
@@ -1494,7 +1494,7 @@
       1,
       4
     ],
-    "Explanation": "",
+    "Explanation": "Whenever a new Lambda version is published, the developer should use a Lambda alias as a stable pointer that can be redirected to the new version without changing the ARN used by the event sources. By configuring the event source mappings to reference the alias ARN instead of a specific version ARN, publishing new versions and updating the alias to point to the latest version eliminates the need to modify the mappings themselves.",
     "Tags": [
       "AWS Official",
       "Multiple Correct Answers"
@@ -1512,7 +1512,7 @@
     "CorrectAnswers": [
       1
     ],
-    "Explanation": "",
+    "Explanation": "The AccessDenied error occurs because the existing IAM role (myRole) attached to the EC2 instance lacks the required permissions to perform DynamoDB operations. EC2 instances use instance profile credentials from the attached role automatically, so the fix is to create a new IAM policy granting the specific DynamoDB actions (e.g., dynamodb:Query, dynamodb:GetItem) and attach it to the existing myRole. This grants the necessary least-privilege access without creating a new role or manually handling credentials.",
     "Tags": [
       "AWS Official"
     ]
@@ -1529,7 +1529,7 @@
     "CorrectAnswers": [
       2
     ],
-    "Explanation": "",
+    "Explanation": "AWS X-Ray provides distributed tracing for applications with many interconnected services, generating detailed trace data that shows the end-to-end flow of requests across API Gateway and downstream services, highlighting latency contributions from each segment and subsegment. This allows the team to rapidly isolate slow API calls and pinpoint the exact services causing delays. Once identified via X-Ray, CloudWatch metrics and logs provide deeper operational insights into those specific services for root cause analysis.",
     "Tags": [
       "AWS Official"
     ]
@@ -1548,7 +1548,7 @@
       1,
       3
     ],
-    "Explanation": "",
+    "Explanation": "To maintain stable production code while allowing active development, the team should publish a new immutable version whenever code is ready for testing or promotion, then use aliases as stable pointers: the Production alias points to a specific qualified version ARN (e.g., :5) that has been validated, while the Development alias points to $LATEST for ongoing work. This separation ensures production traffic always hits tested, stable code without redeploying triggers, while developers can iterate rapidly on $LATEST.",
     "Tags": [
       "AWS Official",
       "Multiple Correct Answers"
@@ -1566,7 +1566,7 @@
     "CorrectAnswers": [
       3
     ],
-    "Explanation": "",
+    "Explanation": "AWS SDKs like Boto3 do not support IAM user names and passwords in the credentials file for programmatic access. Instead, they require an access key ID and secret access key pair, which are generated specifically for programmatic use from the IAM console or CLI. Storing a password in the credentials file is invalid and causes the InvalidAccessKeyId error, so replacing it with the proper long-term credentials resolves the issue securely and correctly.",
     "Tags": [
       "AWS Official"
     ]
@@ -1583,7 +1583,7 @@
     "CorrectAnswers": [
       0
     ],
-    "Explanation": "",
+    "Explanation": "To replicate environment routing via URI paths in a serverless setup, configure API Gateway with Lambda proxy integrations where the target ARN dynamically appends the alias using a stage variable (e.g., my-function:${stageVariables.LambdaAlias}), allowing each deployment stage (production, testing, development) to define its own LambdaAlias variable pointing to the appropriate alias. Additionally, add a resource-based policy on the Lambda function granting lambda:InvokeFunction permission to API Gateway's principal for secure invocation.",
     "Tags": [
       "AWS Official"
     ]
@@ -1600,7 +1600,7 @@
     "CorrectAnswers": [
       1
     ],
-    "Explanation": "",
+    "Explanation": "In a load-balanced environment with multiple EC2 instances, local in-memory session storage is tied to a single instance, so when a user switches devices (new session) or gets routed to a different instance, the previous session data is lost. To ensure session persistence across devices and instances, the application must externalize session state to a centralized store. Amazon ElastiCache for Redis provides a fast, managed in-memory data store that the application can read from and write to for session data, making it available regardless of which instance handles the request.",
     "Tags": [
       "AWS Official"
     ]
@@ -1617,7 +1617,7 @@
     "CorrectAnswers": [
       1
     ],
-    "Explanation": "",
+    "Explanation": "AWS Secrets Manager provides secure storage for sensitive data like API keys, with built-in encryption at rest using AWS KMS and support for automatic rotation. By configuring a custom rotation Lambda function that fetches the new API key from the third-party endpoint (using the overlapping active period to test), and scheduling rotation every 4 months, the solution ensures the key is updated seamlessly without downtime—Secrets Manager handles versioning and makes the latest key immediately available to the consuming Lambda function via the Secrets Manager API, all while maintaining security and eliminating manual intervention.",
     "Tags": [
       "AWS Official"
     ]
@@ -1634,7 +1634,7 @@
     "CorrectAnswers": [
       0
     ],
-    "Explanation": "",
+    "Explanation": "AWS CodeDeploy requires the appspec.yml file to be located in the root directory of the application source code bundle. When the deployment package (ZIP or tar) is uploaded to S3 or GitHub, CodeDeploy reads this file from the root to understand the deployment lifecycle hooks, file mappings, permissions, and scripts needed to install and run the application on EC2 instances.",
     "Tags": [
       "AWS Official"
     ]
@@ -1651,7 +1651,7 @@
     "CorrectAnswers": [
       2
     ],
-    "Explanation": "",
+    "Explanation": "AWS Lambda automatically sends anything written to stdout or stderr to Amazon CloudWatch Logs, creating a dedicated log group and log streams for the function. However, this automatic logging only works when the Lambda execution role includes the necessary permissions (specifically the managed policy AWSLambdaBasicExecutionRole or equivalent permissions like logs:CreateLogGroup, logs:CreateLogStream, and logs:PutLogEvents). Without these IAM permissions attached to the role, no log data appears in CloudWatch Logs even though the print statements execute correctly.",
     "Tags": [
       "AWS Official"
     ]
@@ -1670,7 +1670,7 @@
       0,
       4
     ],
-    "Explanation": "",
+    "Explanation": "To propagate every modification in a DynamoDB table to an external API, the developer must first enable DynamoDB Streams on the table, which captures a time-ordered sequence of item-level changes (inserts, updates, deletes) in near-real time. Then, configure a Lambda function as the consumer of that stream—Lambda processes the stream records automatically and can invoke the external API for each change, providing a reliable, serverless way to react to table modifications without polling.",
     "Tags": [
       "AWS Official",
       "Multiple Correct Answers"
@@ -1688,7 +1688,7 @@
     "CorrectAnswers": [
       3
     ],
-    "Explanation": "",
+    "Explanation": "To reliably invoke multiple independent services for every uploaded image without requiring immediate availability, configure S3 event notifications to publish a message to an SNS topic upon object creation. Then, have each processing service subscribe its own dedicated SQS queue to that SNS topic. This fan-out pattern ensures every image triggers a message delivery to all queues (SNS guarantees delivery to subscribed queues), while SQS provides buffering, retries, and decoupling so each service can process images at its own pace without loss, even during downtime.",
     "Tags": [
       "AWS Official"
     ]
@@ -1705,7 +1705,7 @@
     "CorrectAnswers": [
       3
     ],
-    "Explanation": "",
+    "Explanation": "For a custom activity worker like the tablet application in Step Functions, the workflow requires the activity to be registered once using CreateActivity to obtain a task token endpoint. The worker then polls for tasks with GetActivityTask, which returns a task token and input when work is available. During long-running execution, the worker must periodically call SendTaskHeartbeat to prevent timeout. Upon completion, it reports the result with SendTaskSuccess, or SendTaskFailure if an error occurs, both using the task token to correlate the outcome back to the waiting state machine.",
     "Tags": [
       "AWS Official"
     ]
